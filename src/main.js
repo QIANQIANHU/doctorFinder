@@ -10,7 +10,8 @@ $(document).ready(function() {
 
     $.ajax({
       url:
-      `https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=47.6061,-122.3421&radius=500&types=museum&key=AIzaSyDSFM9lXQaRZG4pnnUg5CtGyiT_Gjb0lCU` + museumName,
+      `https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=47.6061,-122.3421&radius=500&types=museum&name=${museumName}&key=AIzaSyDSFM9lXQaRZG4pnnUg5CtGyiT_Gjb0lCU`,
+      
       type: 'GET',
       data: {
         format: 'json'
