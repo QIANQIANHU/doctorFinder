@@ -17,8 +17,8 @@ module.exports = {
     new UglifyJsPlugin({ sourceMap: true }),
     new CleanWebpackPlugin(['dist']),
     new HtmlWebpackPlugin({
-      title: 'museum',
-      template: './src/museum.html',
+      title: 'doctor',
+      template: './src/doctor.html',
       inject: 'body'
     })
   ],
