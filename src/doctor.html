@@ -8,12 +8,20 @@
   </head>
   <body>
     <div class="container">
-      <h1>Get details about the location of your place of interest!</h1>
-      <label for="museumName">Enter your museum name:</label>
-      <input id="museumName" type="text">
-      <button class="btn-success" id="list">Get your museum</button>
+      <h1>Find the Seattle doctor for you!</h1>
+
+      <label for="medicalIssue">Enter your medical issue:</label>
+      <input id="medicalIssue" type="text">
+      <button class="btn-success" id="doctorList">Get your doctor's list</button>
+      <br>
+      <label for="doctorWithSameName">Enter your doctor's name:</label>
+      <input id="doctorWithSameName" type="text">
+      <button class="btn-success" id="doctorInfo">Get your doctor's information</button>
+
       <div id="errors"></div>
-      <div id="name"></div>
+      <div id="doctorList"></div>
+      <div id="doctorInfo"></div>
+      <!-- first name, last name, address, phone number, website and whether or not the doctor is accepting new patients (the API provides this data) -->
       <div id="address"></div>
     </div>
   </body>
