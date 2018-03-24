@@ -18,8 +18,8 @@ $(document).ready(function() {
         format: 'json'
       },
       success: function(response) {
-        for(let i = 0; i < response.practices.length; i++){
-          $('#doctorList').append(`Doctor's list for ${medicalIssue} is ${response.practices[i].name}.`);
+        for(let i = 0; i <= response.data.practices.length; i++){
+          $('#doctorList').append(`Doctor's list for ${medicalIssue} is ${response.data.practices[i].name}.`);
           // $('#doctorInfo').text(`The location is ${response.results[i].vicinity}.`);
         }
       },
