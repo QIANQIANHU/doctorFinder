@@ -21,7 +21,7 @@ $(document).ready(function() {
       success: function(response) {
         if (response.data.length === 0) {
           $('#doctorListResult').text("Sorry, we didn't find doctors to your criteria!");
-        }else {
+        } else {
           $('#doctorListResult').text("Seattle area's doctor's list for " + medicalIssue + " as below:")
           for(let i = 0; i <= response.data.length; i++){
             $('#doctorListResult').append(`<br><li> ${response.data[i].profile.last_name}</li>`);
