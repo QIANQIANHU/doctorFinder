@@ -1,7 +1,8 @@
 // import { doctor } from './doctor';
-import './styles.css';
 import $ from 'jquery';
 import 'bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './styles.css';
 import './../.env';
 const apiKey = process.env.exports.apiKey;
 
@@ -22,9 +23,9 @@ $(document).ready(function() {
         if (response.data.length === 0) {
           $('#doctorListResult').text("Sorry, we didn't find doctors to your criteria!");
         } else {
-          $('#doctorListResult').text("Seattle area's doctor's list for " + medicalIssue + " as below:")
+          $('#doctorListResult').text("Seattle area's doctor's name list for " + medicalIssue + " as below:")
           for(let i = 0; i <= response.data.length; i++){
-            $('#doctorListResult').append(`<br><li> ${response.data[i].profile.last_name}</li>`);
+            $('#doctorListResult').append(`<br><li class="list-group-item"> ${response.data[i].profile.first_name} ${response.data[i].profile.last_name}</li>`);
           }
         }
       },
@@ -49,9 +50,14 @@ $(document).ready(function() {
           if (response.data.length === 0) {
             $('#doctorNameInfo').text("Sorry, we didn't find doctors to your criteria!");
           }else {
-            $('#doctorNameInfo').text("Seattle area's doctors with " + doctorName + " in name have infomation below:")
+            $('#doctorNameInfo').text("The infomation of Seattle area's doctors with " + doctorName + " in name as below:")
               for(let i = 0; i <= response.data.length; i++){
-                $('#doctorNameInfo').append(`<br><li> ${response.data[i].practices[0].phones[0].number}</li>`);
+                $('#doctorNameInfo').append(`<br><div class="list-group-item">
+                <li>Full name: ${response.data[i].profile.first_name} ${response.data[i].profile.middle_name} ${response.data[i].profile.last_name}</li>
+                <li>Address: <br><div id="address">${response.data[i].practices[0].visit_address.street}<br> ${response.data[i].practices[0].visit_address.city}<br> ${response.data[i].practices[0].visit_address.state}${response.data[i].practices[0].visit_address.zip}</div></li>
+                <li>Phone number: ${response.data[i].practices[0].phones[0].number}</li>
+                <li>Accepting new patients or not: ${response.data[i].practices[0].accepts_new_patients}</li>
+                </div>`);
                 }
               }
             },

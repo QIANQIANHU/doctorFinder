@@ -9,18 +9,21 @@
   <body>
     <div class="container">
       <h1>Find the Seattle doctor for you!</h1>
-
-      <label for="medicalIssue">Enter your medical issue:</label>
-      <input id="medicalIssue" type="text">
-      <button class="btn-success" id="doctorList">Get your doctor's list</button>
+      <div class="jumbotron">
+        <label for="medicalIssue">Enter your medical issue:</label>
+        <input id="medicalIssue" type="text">
+        <button class="btn-success" id="doctorList">Get your doctor's list</button>
+      </div>
       <br>
-      <label for="doctorName">Enter your doctor's name:</label>
-      <input id="doctorName" type="text">
-      <button class="btn-success" id="doctorInfo">Get your doctor's information</button>
+      <div class="jumbotron">
+        <label for="doctorName">Enter your doctor's name:</label>
+        <input id="doctorName" type="text">
+        <button class="btn-success" id="doctorInfo">Get your doctor's information</button>
+      </div>
 
       <div id="errors"></div>
-      <div id="doctorListResult"></div>
-      <div id="doctorNameInfo"></div>
+      <ul class="list-group" id="doctorListResult"></ul>
+      <div class="list-group" id="doctorNameInfo"></div>
       <!-- first name, last name, address, phone number, website and whether or not the doctor is accepting new patients (the API provides this data) -->
       <div id="address"></div>
     </div>
